@@ -1,0 +1,17 @@
+# https://dou.ua/forums/topic/56830/
+# https://www.kaggle.com/datasets/siddharthkumar25/malicious-and-benign-urls?select=urldata.csv
+
+# pip install -U pandas numpy scikit-learn tld joblib
+
+import os
+import pandas as pd
+import re
+from urllib.parse import urlparse
+from tld import get_tld
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.calibration import CalibratedClassifierCV
+import json, joblib
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, roc_auc_score
